@@ -5,6 +5,8 @@ public class Timer extends Thread
 
 	public Timer(AppModel am)
 	{
+		super();
+		this.setName("timer");
 		this.alive = true;
 		this.app_model = am;
 	}
