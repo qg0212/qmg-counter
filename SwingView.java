@@ -29,7 +29,7 @@ public class SwingView extends JFrame implements IView
 
 		this.control = new JButton();
 		this.control.setText("START");
-		this.control.setName("control");
+		this.control.setName("start");
 		this.control.setPreferredSize(new Dimension(0, 32));
 		panel.add(this.control, BorderLayout.SOUTH);
 
@@ -75,20 +75,30 @@ public class SwingView extends JFrame implements IView
 	public void update(Model m, Object[] args)
 	{
 		try {
-			int n = (Integer)args[0];
-			this.update(n);
+			this.update(
+				(Boolean)args[0],
+				(Integer)args[1]
+			);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	private void update(int count)
+	private void update(boolean counting, int count)
 	{
-		int minutes = count / 60;
-		int secondes = count % 60;
-		this.a.setText(""+(minutes/10));
-		this.b.setText(""+(minutes%10));
-		this.c.setText(""+(secondes/10));
-		this.d.setText(""+(secondes%10));
+		if (counting) {
+			this.control.setText("STOP");
+			this.control.setName("stop");
+			int minutes = count / 60;
+			int secondes = count % 60;
+			this.a.setText(""+(minutes/10));
+			this.b.setText(""+(minutes%10));
+			this.c.setText(""+(secondes/10));
+			this.d.setText(""+(secondes%10));
+		}
+		else {
+			this.control.setText("START");
+			this.control.setName("start");
+		}
 	}
 }
