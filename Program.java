@@ -21,6 +21,6 @@ public class Program
 
 	private static void startApplication(String[] args)
 	{
-		//
+		IView iv = new SwingView();
 	}
 }
