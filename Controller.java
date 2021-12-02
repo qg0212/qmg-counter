@@ -13,7 +13,11 @@ public class Controller implements ActionListener
 
 	public Controller()
 	{
-		this.app_model = null;
+		this(null);
+	}
+	public Controller(AppModel am)
+	{
+		this.app_model = am;
 	}
 
 	public void actionPerformed(ActionEvent evt)
