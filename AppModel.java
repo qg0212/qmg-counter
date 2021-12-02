@@ -22,12 +22,14 @@ public class AppModel extends Model
 	public void stopCounting()
 	{
 		this.counting = false;
+		this.notifyObservers();
 		this.timer.kill();
 		this.timer = null;
 	}
 	public void startCounting()
 	{
-		this.counting = false;
+		this.counting = true;
+		this.notifyObservers();
 		this.timer = new Timer(this);
 		this.timer.start();
 	}
