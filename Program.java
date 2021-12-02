@@ -22,5 +22,11 @@ public class Program
 	private static void startApplication(String[] args)
 	{
 		IView iv = new SwingView();
+		Controller ctrl = new Controller();
+		AppModel am = new AppModel();
+
+		iv.setController(ctrl);
+		ctrl.setAppModel(am);
+		am.addObserver(iv);
 	}
 }

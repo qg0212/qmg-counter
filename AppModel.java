@@ -23,6 +23,7 @@ public class AppModel extends Model
 	{
 		this.counting = false;
 		this.notifyObservers();
+		this.counter = 0;
 		this.timer.kill();
 		this.timer = null;
 	}

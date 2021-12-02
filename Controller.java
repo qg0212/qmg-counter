@@ -1,13 +1,19 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 public class Controller implements ActionListener
 {
 	private AppModel app_model;
 
-	public Controller(AppModel am)
+	public void setAppModel(AppModel am)
 	{
 		this.app_model = am;
+	}
+
+	public Controller()
+	{
+		this.app_model = null;
 	}
 
 	public void actionPerformed(ActionEvent evt)

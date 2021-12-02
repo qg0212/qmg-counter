@@ -6,6 +6,11 @@ public class SwingView extends JFrame implements IView
 	private JLabel a, b, c, d;
 	private JButton control;
 
+	public void setController(Controller c)
+	{
+		this.control.addActionListener(c);
+	}
+
 	public SwingView()
 	{
 		super();
