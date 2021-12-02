@@ -34,7 +34,10 @@ public class AppModel extends Model
 
 	private void notifyObservers()
 	{
-		Object[] args = {this.counter};
+		Object[] args = {
+			this.counting,
+			this.counter
+		};
 		this.notify(args);
 	}
 }
